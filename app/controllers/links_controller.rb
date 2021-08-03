@@ -48,6 +48,18 @@ class LinksController < ApplicationController
     end
   end
 
+  def upvote
+    @link = Link.find(params[:id])
+    @link.upvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
+  def downvote
+    @link = Link.find(params[:id])
+    @link.downvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
   # DELETE /links/1 or /links/1.json
   def destroy
     @link.destroy
