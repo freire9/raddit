@@ -2,9 +2,7 @@
   <h1><a href="<%= @link.url %>"><%= @link.title %></a><br> <small>Submitted by <%= @link.user.name %></small></h1>
 </div>
 
-<div class="btn-group">
-	<%= link_to 'Visit URL', @link.url, class: "btn btn-primary" %>
-</div>
+
 
 <div class="btn-group pull-right">
   <%= link_to Like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
@@ -19,11 +17,13 @@
   <% end %>
 </div>
 
-<% if @link.user == current_user -%>
-	<div class="btn-group">
-		<%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
-		<%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
-<% end %>
+<div class="btn-group">
+	<%= link_to 'Visit URL', @link.url, class: "btn btn-primary" %>
+  <% if @link.user == current_user -%>
+		  <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
+		  <%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+</div>
+  <% end %>
 
 <h3 class="comments_title">
   <%= @link.comments.count %> Comments
