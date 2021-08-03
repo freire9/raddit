@@ -5,7 +5,7 @@
 
 
 <div class="btn-group pull-right">
-  <%= link_to Like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+  <%= link_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
     <span class="glyphicon glyphicon-chevron-up"></span>
     Upvote
     <%= @link.get_upvotes.size %>
