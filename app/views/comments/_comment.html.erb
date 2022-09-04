@@ -1,6 +1,6 @@
 <%= div_for(comment) do %>
 	<div class="comments_wrapper clearfix">
-		<div class="pull-left">
+		<div class="pull-left testing holi">
 			<p class="lead"><%= comment.body %></p>
 			<p><small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong> by <%= comment.user.name %></small></p>
 		</div>
